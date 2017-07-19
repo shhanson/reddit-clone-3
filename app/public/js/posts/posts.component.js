@@ -14,7 +14,7 @@
       PostsService.getPosts().then(() => {
         vm.posts = PostsService.posts;
       });
-      vm.sortSelected = '-id';
+      vm.sortSelected = '-vote_count';
     };
   }
 }());

@@ -1,14 +1,4 @@
-<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }li img { max-width: 100%; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display === "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;if (failedSpecs.length > 0) { document.getElementById("quickLinksHeader").textContent = "Quicklink of Failure"}for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>App (12 s)</h4><li id="b5aed620-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec0" data-name="toggles the form" data-browser="chrome"><span class="failed">&#10007;</span><a href="b610e2aef159719a5af88d497e7d0a95.png">toggles the form</a>(0.837 s)<ul><li>Expected 1 to equal 0. [<a href="javascript:showhide('spec0-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec0-MacOSX-chrome-59.0.3071.1150" class="stacktrace">Error: Failed expectation
-    at PostForm.expectFormToBeClosed (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:215:51)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:14:8)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li><li>Failed: No element found using locator: by.cssContainingText(&quot;a,button&quot;, &quot;New Post&quot;) [<a href="javascript:showhide('spec0-MacOSX-chrome-59.0.3071.1151')">stack</a>]<br/><span style="display: none" id="spec0-MacOSX-chrome-59.0.3071.1151" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;a,button&quot;, &quot;New Post&quot;)
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }li img { max-width: 100%; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display === "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;if (failedSpecs.length > 0) { document.getElementById("quickLinksHeader").textContent = "Quicklink of Failure"}for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>App (15 s)</h4><li id="9c296720-6cbc-11e7-84dd-db5971460498" class="failed" data-spec="spec0" data-name="toggles the form" data-browser="chrome"><span class="failed">&#10007;</span><a href="dae5e112acb48bd3384e52b95109ec2a.png">toggles the form</a>(0.911 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;a,button&quot;, &quot;New Post&quot;) [<a href="javascript:showhide('spec0-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec0-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;a,button&quot;, &quot;New Post&quot;)
     at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
     at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
     at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
@@ -20,7 +10,7 @@
     at ElementArrayFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
     at ElementFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
     at PostForm.clickNewPostButton (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:174:26)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:17:8)
+    at Object.it (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:17:8)
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
     at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
     at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
@@ -43,7 +33,7 @@ From: Task: Run it(&quot;toggles the form&quot;) in control flow
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
 From asynchronous test: 
 Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:12:3)
+    at Suite.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:12:3)
     at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
     at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
     at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
@@ -57,7 +47,7 @@ Error
     at require (internal/module.js:20:19)
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
     at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="b5aefd30-6a33-11e7-9834-b983373575e4" class="passed" data-spec="spec1" data-name="disables the button until the form is valid" data-browser="chrome"><span class="passed">&#10003;</span><a href="f8765fe54e1165be254d2bc5fd295cb0.png">disables the button until the form is valid</a>(1 s)</li><li id="b5aefd31-6a33-11e7-9834-b983373575e4" class="passed" data-spec="spec2" data-name="changes the validation class names on blur" data-browser="chrome"><span class="passed">&#10003;</span><a href="46e51ac59ecf2404dc0211fbbacbe51c.png">changes the validation class names on blur</a>(0.944 s)</li><li id="b5aefd32-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec3" data-name="creates a post" data-browser="chrome"><span class="failed">&#10007;</span><a href="921f94aef61fd31e2f74e62ae01bcc63.png">creates a post</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec3-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec3-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
+    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="9c298e30-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec1" data-name="disables the button until the form is valid" data-browser="chrome"><span class="passed">&#10003;</span><a href="a80158a38c42cbd3366fb3d3ce72d6e7.png">disables the button until the form is valid</a>(1 s)</li><li id="9c298e31-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec2" data-name="changes the validation class names on blur" data-browser="chrome"><span class="passed">&#10003;</span><a href="6bd1f5f2f06de0f7687369dcbdf7a161.png">changes the validation class names on blur</a>(0.946 s)</li><li id="9c298e32-6cbc-11e7-84dd-db5971460498" class="failed" data-spec="spec3" data-name="creates a post" data-browser="chrome"><span class="failed">&#10007;</span><a href="8572ab7dbe824b34e31fd442b92e907d.png">creates a post</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec3-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec3-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
     at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
     at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
     at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
@@ -69,7 +59,7 @@ Error
     at ElementArrayFinder.(anonymous function).args [as getAttribute] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
     at ElementFinder.(anonymous function).args [as getAttribute] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
     at PostForm.expectPostToBeAdded (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:258:54)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:40:8)
+    at Object.it (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:40:8)
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
     at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
     at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
@@ -92,7 +82,7 @@ From: Task: Run it(&quot;creates a post&quot;) in control flow
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
 From asynchronous test: 
 Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:35:3)
+    at Suite.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:35:3)
     at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
     at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
     at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
@@ -106,230 +96,4 @@ Error
     at require (internal/module.js:20:19)
     at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
     at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="b5aefd33-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec4" data-name="allows users to add comments" data-browser="chrome"><span class="failed">&#10007;</span><a href="e01f7dd7e0cfea24e031fc3e02491ed8.png">allows users to add comments</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec4-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec4-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
-    at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
-    at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-    at process._tickCallback (internal/process/next_tick.js:109:7)Error
-    at ElementArrayFinder.applyAction_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
-    at ElementArrayFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
-    at ElementFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
-    at PostForm.expandComments (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:204:73)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:48:8)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From: Task: Run it(&quot;allows users to add comments&quot;) in control flow
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
-    at attemptAsync (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
-    at QueueRunner.run (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
-    at ControlFlow.emit (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
-    at ControlFlow.shutdown_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
-    at shutdownTask_.MicroTask (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
-    at MicroTask.asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From asynchronous test: 
-Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:43:3)
-    at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
-    at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
-    at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-    at Function.Module._load (module.js:439:3)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
-    at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="b5aefd34-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec5" data-name="clicking on comments only expands a single comments field (not all of them)" data-browser="chrome"><span class="failed">&#10007;</span><a href="8e6a5469bac2fe82b0de225f59984ae1.png">clicking on comments only expands a single comments field (not all of them)</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec5-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec5-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
-    at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
-    at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-    at process._tickCallback (internal/process/next_tick.js:109:7)Error
-    at ElementArrayFinder.applyAction_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
-    at ElementArrayFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
-    at ElementFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
-    at PostForm.expandComments (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:204:73)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:66:8)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From: Task: Run it(&quot;clicking on comments only expands a single comments field (not all of them)&quot;) in control flow
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
-    at attemptAsync (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
-    at QueueRunner.run (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
-    at ControlFlow.emit (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
-    at ControlFlow.shutdown_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
-    at shutdownTask_.MicroTask (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
-    at MicroTask.asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From asynchronous test: 
-Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:53:3)
-    at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
-    at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
-    at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-    at Function.Module._load (module.js:439:3)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
-    at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="b5aefd35-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec6" data-name="allows users to filter" data-browser="chrome"><span class="failed">&#10007;</span><a href="f2d16d193dce4771df0c3aeab219c97b.png">allows users to filter</a>(2 s)<ul><li>Expected 0 to be greater than 0. [<a href="javascript:showhide('spec6-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-59.0.3071.1150" class="stacktrace">Error: Failed expectation
-    at PostForm.expectToBePresent (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:220:41)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:88:15)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li><li>Expected 0 to be greater than 0. [<a href="javascript:showhide('spec6-MacOSX-chrome-59.0.3071.1151')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-59.0.3071.1151" class="stacktrace">Error: Failed expectation
-    at PostForm.expectToBePresent (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:220:41)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:89:16)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li><li>Expected 0 to be greater than 0. [<a href="javascript:showhide('spec6-MacOSX-chrome-59.0.3071.1152')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-59.0.3071.1152" class="stacktrace">Error: Failed expectation
-    at PostForm.expectToBePresent (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:220:41)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:93:16)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li></ul></li><li id="b5aefd36-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec7" data-name="allows users to sort" data-browser="chrome"><span class="failed">&#10007;</span><a href="911dc64b3ef993a9b436ffbbf5c445be.png">allows users to sort</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;a&quot;, &quot;Sort By Votes&quot;) [<a href="javascript:showhide('spec7-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec7-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;a&quot;, &quot;Sort By Votes&quot;)
-    at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
-    at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-    at process._tickCallback (internal/process/next_tick.js:109:7)Error
-    at ElementArrayFinder.applyAction_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
-    at ElementArrayFinder.(anonymous function).args [as isDisplayed] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
-    at ElementFinder.(anonymous function).args [as isDisplayed] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
-    at Sorter.expectSortByVotesToShow (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:150:37)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:108:8)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From: Task: Run it(&quot;allows users to sort&quot;) in control flow
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
-    at attemptAsync (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
-    at QueueRunner.run (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
-    at ControlFlow.emit (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
-    at ControlFlow.shutdown_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
-    at shutdownTask_.MicroTask (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
-    at MicroTask.asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From asynchronous test: 
-Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:96:3)
-    at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
-    at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
-    at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-    at Function.Module._load (module.js:439:3)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
-    at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="b5aefd37-6a33-11e7-9834-b983373575e4" class="failed" data-spec="spec8" data-name="allows users to edit" data-browser="chrome"><span class="failed">&#10007;</span><a href="65b6adf7971d0534f15783ed653a50d4.png">allows users to edit</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;To be&quot;) [<a href="javascript:showhide('spec8-MacOSX-chrome-59.0.3071.1150')">stack</a>]<br/><span style="display: none" id="spec8-MacOSX-chrome-59.0.3071.1150" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;To be&quot;)
-    at elementArrayFinder.getWebElements.then (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:851:17)
-    at ManagedPromise.invokeCallback_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1366:14)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2813:27)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-    at process._tickCallback (internal/process/next_tick.js:109:7)Error
-    at ElementArrayFinder.applyAction_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:482:23)
-    at ElementArrayFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:96:21)
-    at ElementFinder.(anonymous function).args [as click] (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/protractor/lib/element.ts:873:14)
-    at PostForm.clickEdit (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:184:21)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:117:8)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
-    at new ManagedPromise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1067:7)
-    at ControlFlow.promise (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2396:12)
-    at schedulerExecute (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
-    at TaskQueue.execute_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2970:14)
-    at TaskQueue.executeNext_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2953:27)
-    at asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2860:25)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From: Task: Run it(&quot;allows users to edit&quot;) in control flow
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
-    at attemptAsync (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3945:24)
-    at QueueRunner.run (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3884:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3924:18
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3848:9
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
-    at ControlFlow.emit (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
-    at ControlFlow.shutdown_ (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2565:10)
-    at shutdownTask_.MicroTask (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2490:53)
-    at MicroTask.asyncRun (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2619:9)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:676:7
-From asynchronous test: 
-Error
-    at Suite.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:112:3)
-    at addSpecsToSuite (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:994:25)
-    at Env.describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:961:7)
-    at describe (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4031:18)
-    at Object.&lt;anonymous&gt; (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-    at Function.Module._load (module.js:439:3)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at /Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
-    at Array.forEach (native)
-    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li></ul><a href="javascript:showhide('b5af2440-6a33-11e7-9834-b983373575e4')">Toggle Configuration</a><div class="config" id="b5af2440-6a33-11e7-9834-b983373575e4" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.6.4</li><li>Browser name:  chrome</li><li>Browser version:  59.0.3071.115</li><li>Platform:  Mac OS X</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>
+    at Jasmine.loadSpecs (/Users/shanson/Documents/galvanize/unit-3/week13/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="9c298e33-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec4" data-name="allows users to add comments" data-browser="chrome"><span class="passed">&#10003;</span><a href="eba44864a4db964938dbaffc55bb5e68.png">allows users to add comments</a>(2 s)</li><li id="9c298e34-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec5" data-name="clicking on comments only expands a single comments field (not all of them)" data-browser="chrome"><span class="passed">&#10003;</span><a href="ffdc9637b8d6151225d3b543ff6b660a.png">clicking on comments only expands a single comments field (not all of them)</a>(2 s)</li><li id="9c298e35-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec6" data-name="allows users to filter" data-browser="chrome"><span class="passed">&#10003;</span><a href="fbe606eeb4c88a5456a7fc543dd76143.png">allows users to filter</a>(2 s)</li><li id="9c298e36-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec7" data-name="allows users to sort" data-browser="chrome"><span class="passed">&#10003;</span><a href="478b53d75fe547fe2c2ad836e7d2d08e.png">allows users to sort</a>(2 s)</li><li id="9c298e37-6cbc-11e7-84dd-db5971460498" class="passed" data-spec="spec8" data-name="allows users to edit" data-browser="chrome"><span class="passed">&#10003;</span><a href="ecdc2460769a834e3c35dafb4fd78bc2.png">allows users to edit</a>(2 s)</li></ul><a href="javascript:showhide('9c29b540-6cbc-11e7-84dd-db5971460498')">Toggle Configuration</a><div class="config" id="9c29b540-6cbc-11e7-84dd-db5971460498" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.6.4</li><li>Browser name:  chrome</li><li>Browser version:  59.0.3071.115</li><li>Platform:  Mac OS X</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>

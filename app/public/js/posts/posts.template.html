@@ -3,26 +3,23 @@
       <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model='filterInput' name='filter'>
     </li>
     <div class="form-inline">
-      <label for="sort" class='left-pad'>Sort by </label>
-      <select class="form-control" name="sort" ng-model='$ctrl.sortSelected'>
-        <option ng-selected='true' selected='selected' default value='-id' name='-id'>Date (newest first)</option>
-        <option value='-vote_count' name='-vote_count'>Votes (highest first)</option>
-        <option value='title' name='title'>Title</option>
-      </select>
+      <!-- <label for="sort" class='left-pad'>Sort by </label> -->
+      <a><select class="form-control left-pad" name="sort" ng-model='$ctrl.sortSelected'>
+        <option value='-id' name='-id'>Sort By Date</option>
+        <option value='-vote_count' name='-vote_count'>Sort By Votes</option>
+        <option value='title' name='title'>Sort By Title</option>
+      </select></a>
     </div>
   </ul>
 
 <div class="pull-right">
-    <p><a ui-sref='addPost({newPostClicked: true, editPostClicked: false})' class="btn btn-info" ng-click='newPostClicked = !newPostClicked'>{{ newPostClicked ? 'Cancel' : 'New Post' }}</a></p>
-</div>
 
-<div ng-show='newPostClicked'>
-  <!-- <ui-view></ui-view> -->
+    <p><a ui-sref='addPost({newPostClicked: true, editPostClicked: false})' ng-click='newPostClicked = !newPostClicked'><button class='btn btn-info'>{{ newPostClicked ? 'Cancel' : 'New Post' }}</button></a></p>
 
 </div>
 
-<section ng-repeat='post in $ctrl.posts | orderBy: $ctrl.sortSelected | filter: {title: filterInput}'>
+<div ng-repeat='post in $ctrl.posts | orderBy: $ctrl.sortSelected | filter: {title: filterInput}'>
 
   <post post='post'></post>
 
-</section>
+</div>

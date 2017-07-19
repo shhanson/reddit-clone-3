@@ -6,7 +6,10 @@
     "node": "7.10.0"
   },
   "scripts": {
-    "start": "node ./app/bin/www"
+    "start": "node ./app/bin/www",
+    "test-e2e": "NODE_ENV=test protractor test/e2e/conf.js",
+    "test-server": "NODE_ENV=test mocha test/server",
+    "test": "npm run test-server; npm run test-e2e"
   },
   "keywords": [],
   "author": "",
