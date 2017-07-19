@@ -16,7 +16,7 @@
         name: 'editPost',
         url: 'posts/:postId/edit',
         component: 'postform',
-        parent: 'posts',
+        // parent: 'posts',
         params: {
           editPostClicked: true,
           newPostClicked: false,
@@ -27,7 +27,7 @@
         name: 'addPost',
         url: 'posts/add',
         component: 'postform',
-        parent: 'posts',
+        // parent: 'posts',
         params: {
           editPostClicked: false,
           newPostClicked: true,

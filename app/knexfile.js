@@ -2,12 +2,16 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'reddit-clone',
+    connection: {
+      database: process.env.DATABASE_URL || 'reddit-clone',
+    },
   },
 
   test: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'reddit-clone-test',
+    connection: {
+      database: process.env.DATABASE_URL || 'reddit-clone-test',
+    },
   },
 
   production: {

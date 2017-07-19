@@ -17,7 +17,8 @@
 </div>
 
 <div ng-show='newPostClicked'>
-  <ui-view></ui-view>
+  <!-- <ui-view></ui-view> -->
+
 </div>
 
 <section ng-repeat='post in $ctrl.posts | orderBy: $ctrl.sortSelected | filter: {title: filterInput}'>
