@@ -10,6 +10,10 @@
         });
       };
 
+      self.getPost = function getPost(postID) {
+        return $http.get(`/api/posts/${postID}`);
+      };
+
       self.addPost = function addPost(newPost) {
         $http.post('/api/posts', newPost).then((response) => {
           self.posts.push(response.data);

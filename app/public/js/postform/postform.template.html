@@ -4,30 +4,29 @@
     <form name='postForm' novalidate>
       <div class='form-group' ng-class='{"has-error": postForm.title.$touched && postForm.title.$invalid}'>
         <label for='title'>Title</label>
-        <input type='text' ng-model='$ctrl.tempPost.title' name='title' id='title' class='form-control' ng-value="$ctrl.post.title" required>
+        <input type='text' ng-model='$ctrl.tempPost.title' name='title' id='title' class='form-control' required>
       </div>
 
 
       <div class='form-group' ng-class='{"has-error": postForm.author.$touched && postForm.author.$invalid}'>
         <label for='author'>Author</label>
-        <input type='text' ng-model='$ctrl.tempPost.author' name='author' id='author' class='form-control' ng-value='$ctrl.post.author' required>
+        <input type='text' ng-model='$ctrl.tempPost.author' name='author' id='author' class='form-control' required>
       </div>
 
       <div class='form-group' ng-class='{"has-error": postForm.body.$touched && postForm.body.$invalid}'>
         <label for='body'>Body</label>
-        <textarea ng-model='$ctrl.tempPost.body' name='body' id='body' class='form-control' ng-value='$ctrl.post.body' required></textarea>
+        <textarea ng-model='$ctrl.tempPost.body' name='body' id='body' class='form-control' required></textarea>
       </div>
 
       <div class='form-group' ng-class='{"has-error": postForm.imageURL.$touched && postForm.imageURL.$invalid}'>
 
         <label for='imageURL'>Image URL</label>
-        <input type='text' ng-model='$ctrl.tempPost.image_url' name='imageURL' id='imageURL' ng-value='$ctrl.post.image_url' class='form-control' required>
-        FIELD INVALID: {{ postForm.imageURL.$invalid}}
+        <input type='text' ng-model='$ctrl.tempPost.image_url' name='imageURL' id='imageURL' class='form-control' required>
       </div>
 
 
       <div class='form-group'>
-        <button type='submit' class='btn btn-primary' ng-click='$ctrl.submitForm();postForm.$setUntouched()' ng-disabled='postForm.$invalid'>Submit</button>
+        <button type='submit' class='btn btn-primary' ng-click='$ctrl.submitForm();postForm.$setUntouched()' ng-disabled='postForm.$invalid'>{{ $ctrl.newPostClicked ? 'Create Post' : 'Update Post'}}</button>
       </div>
 
     </form>

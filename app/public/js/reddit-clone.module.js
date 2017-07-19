@@ -14,18 +14,17 @@
       })
       .state({
         name: 'editPost',
-        url: 'posts/:postId/edit',
+        url: '/posts/:postId/edit',
         component: 'postform',
         // parent: 'posts',
         params: {
           editPostClicked: true,
           newPostClicked: false,
-          post: null,
         },
       })
       .state({
         name: 'addPost',
-        url: 'posts/add',
+        url: '/posts/add',
         component: 'postform',
         // parent: 'posts',
         params: {

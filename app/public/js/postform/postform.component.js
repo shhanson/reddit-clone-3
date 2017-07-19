@@ -5,21 +5,26 @@
       templateUrl: '/js/postform/postform.template.html',
     });
 
-  PostformController.$inject = ['PostsService', '$stateParams', '$scope', '$state'];
+  PostformController.$inject = ['PostsService', '$stateParams', '$state'];
 
-  function PostformController(PostsService, $stateParams, $scope, $state) {
+  function PostformController(PostsService, $stateParams, $state) {
     const vm = this;
     vm.tempPost = {};
-
-    $scope.$watch('postForm', (postForm) => {
-
-    });
 
     vm.$onInit = function onInit() {
       vm.postId = $stateParams.postId;
       vm.editPostClicked = $stateParams.editPostClicked;
       vm.newPostClicked = $stateParams.newPostClicked;
-      vm.post = $stateParams.post;
+
+      if (vm.editPostClicked) {
+        PostsService.getPost(vm.postId).then((response) => {
+          vm.tempPost = response.data;
+        });
+      }
+
+      // if ($stateParams.post) {
+      //   vm.tempPost = JSON.parse(JSON.stringify($stateParams.post));
+      // }
     };
 
 
