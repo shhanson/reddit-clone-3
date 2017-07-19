@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="well">
+      <div class="media-left">
+        <img class="media-object" ng-src='{{ $ctrl.post.image_url }}'>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ $ctrl.post.title }} | <a><i class="glyphicon glyphicon-arrow-up" ng-click='$ctrl.upvote()'></i></a>
+        <a><i class="glyphicon glyphicon-arrow-down" ng-click='$ctrl.downvote()'></i></a>
+        <span>{{ $ctrl.post.vote_count }}</span> </h4>
+
+
+        <div class="text-right">
+          posted by {{ $ctrl.post.author }}
+
+
+          (<a ui-sref='editPost({postId: $ctrl.post.id, newPostClicked: false, editPostClicked: true, post: $ctrl.post})' ng-click='editPostClicked=!editPostClicked'>Edit</a>)
+
+        </div>
+
+        <p> {{ $ctrl.post.body }}</p>
+
+        <div>
+
+          <span title="{{ $ctrl.post.created_at | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}" am-time-ago='$ctrl.post.created_at'></span> |
+          <comments post-id='$ctrl.post.id'></comments>
+        </div>
+
+      </div>
+
+    </div>
+    <div ng-show='editPostClicked'>
+      <ui-view></ui-view>
+    </div>
+  </div>
+</div>

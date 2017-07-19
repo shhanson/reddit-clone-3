@@ -1,0 +1,27 @@
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">
+      <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model='filterInput' name='filter'>
+    </li>
+    <div class="form-inline">
+      <label for="sort" class='left-pad'>Sort by </label>
+      <select class="form-control" name="sort" ng-model='$ctrl.sortSelected'>
+        <option ng-selected='true' selected='selected' default value='-id' name='-id'>Date (newest first)</option>
+        <option value='-vote_count' name='-vote_count'>Votes (highest first)</option>
+        <option value='title' name='title'>Title</option>
+      </select>
+    </div>
+  </ul>
+
+<div class="pull-right">
+    <p><a ui-sref='addPost({newPostClicked: true, editPostClicked: false})' class="btn btn-info" ng-click='newPostClicked = !newPostClicked'>{{ newPostClicked ? 'Cancel' : 'New Post' }}</a></p>
+</div>
+
+<div ng-show='newPostClicked'>
+  <ui-view></ui-view>
+</div>
+
+<section ng-repeat='post in $ctrl.posts | orderBy: $ctrl.sortSelected | filter: {title: filterInput}'>
+
+  <post post='post'></post>
+
+</section>
