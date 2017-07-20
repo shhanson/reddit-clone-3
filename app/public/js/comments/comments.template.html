@@ -7,7 +7,7 @@
     <hr>
     <section ng-repeat="comment in $ctrl.comments | orderBy: id">
 
-      <p>{{ comment.content }}</p>
+      <p>{{ comment.content }} <span>(<a href='' ng-click='$ctrl.deleteComment(comment.id)' )>delete</a>)</p>
 
     </section>
     <form name='newCommentForm' ng-submit='$ctrl.addComment();newCommentForm.$setUntouched()' class="form-inline">

@@ -7,8 +7,8 @@
       controller: CommentsController,
       templateUrl: '/js/comments/comments.template.html',
     });
-  CommentsController.$inject = ['CommentsService'];
-  function CommentsController(CommentsService) {
+  CommentsController.$inject = ['CommentsService', '$timeout', '$scope'];
+  function CommentsController(CommentsService, $timeout, $scope) {
     const vm = this;
     vm.comment = {};
     vm.comments = [];
@@ -17,13 +17,29 @@
       CommentsService.getComments(vm.postId).then(() => {
         vm.comments = CommentsService.comments;
       });
+      // vm.doneProcessing = true;
     };
 
 
     vm.addComment = function addComment() {
-      CommentsService.addComment(vm.postId, vm.comment);
-      vm.comments.push(vm.comment);
-      vm.comment = {};
+      CommentsService.addComment(vm.postId, vm.comment).then(() => {
+        vm.comments.push(vm.comment);
+        vm.comment = {};
+      });
+    };
+
+    vm.deleteComment = function deleteComment(commentID) {
+      const confirmDelete = confirm('Are you sure you want to delete this comment?');
+      if (confirmDelete) {
+        CommentsService.deleteComment(vm.postId, commentID);
+        for (let i = 0; i < vm.comments.length; i++) {
+          if (vm.comments[i].id === commentID) {
+            vm.comments.splice(i, 1);
+            vm.comment = {};
+            return;
+          }
+        }
+      }
     };
   }
 }());

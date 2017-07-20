@@ -11,8 +11,17 @@
       };
 
       self.addComment = function addComment(postID, newComment) {
-        $http.post(`/api/posts/${postID}/comments`, newComment).then(() => {
-          // self.comments.push(response.data);
+        return $http.post(`/api/posts/${postID}/comments`, newComment);
+      };
+
+      self.deleteComment = function deleteComment(postID, commentID) {
+        $http.delete(`/api/posts/${postID}/comments/${commentID}`).then(() => {
+          for (let i = 0; i < self.comments.length; i++) {
+            if (self.comments[i].id === commentID) {
+              self.comments.splice(i, 1);
+              return;
+            }
+          }
         });
       };
     }]);

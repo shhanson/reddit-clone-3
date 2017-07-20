@@ -25,14 +25,7 @@
     vm.deletePost = function deletePost() {
       const confirmDelete = confirm('Are you sure you want to delete this post?');
       if (confirmDelete) {
-        PostsService.deletePost(vm.post.id);
-        // vm.post = {};
-        // for (let i = 0; i < vm.posts.length; i++) {
-        //   if (vm.post.id === vm.posts.length) {
-        //     vm.posts.slice(i, 1);
-        //     return;
-        //   }
-        // }
+        PostsService.deletePost(vm.post.id, vm.post.id);
       }
     };
   }
