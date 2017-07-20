@@ -52,5 +52,16 @@
           }
         });
       };
+
+      self.deletePost = function deletePost(postID) {
+        return $http.delete(`/api/posts/${postID}`).then(() => {
+          for (let i = 0; i < self.posts.length; i++) {
+            if (self.posts[i].id === postID) {
+              self.posts.splice(i, 1);
+              return;
+            }
+          }
+        });
+      };
     }]);
 }());

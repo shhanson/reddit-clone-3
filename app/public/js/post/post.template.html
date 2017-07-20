@@ -15,7 +15,7 @@
           posted by {{ $ctrl.post.author }}
 
 
-          (<a ui-sref='editPost({postId: $ctrl.post.id, newPostClicked: false, editPostClicked: true})' ng-click='editPostClicked=!editPostClicked'>edit</a>)
+          (<a ui-sref='editPost({postId: $ctrl.post.id, newPostClicked: false, editPostClicked: true})' ng-click='editPostClicked=!editPostClicked'>edit</a> / <a href='' ng-click='$ctrl.deletePost()'>delete</a>)
 
         </div>
 
