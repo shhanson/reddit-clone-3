@@ -21,10 +21,6 @@
           vm.tempPost = response.data;
         });
       }
-
-      // if ($stateParams.post) {
-      //   vm.tempPost = JSON.parse(JSON.stringify($stateParams.post));
-      // }
     };
 
 

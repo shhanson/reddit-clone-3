@@ -22,8 +22,8 @@
 
 
     vm.addComment = function addComment() {
-      CommentsService.addComment(vm.postId, vm.comment).then(() => {
-        vm.comments.push(vm.comment);
+      CommentsService.addComment(vm.postId, vm.comment).then((response) => {
+        vm.comments.push(response.data);
         vm.comment = {};
       });
     };
