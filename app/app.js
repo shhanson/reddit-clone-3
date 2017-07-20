@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+
 const app = express();
 
 if (process.env.NODE_ENV !== 'test') {
@@ -12,9 +14,14 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '/../', 'node_modules')));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
+
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/posts', require('./routes/comments'));
-app.use('/api/users', require('./routes/users'));
+app.use('/users', require('./routes/users'));
 
 app.use('*', (req, res, next) => {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') });

@@ -7,7 +7,7 @@ const router = express.Router();
 const saltRounds = 11;
 
 // GET a user
-router.get('/users/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   // Allow user to see all their own posts/comments
 });
 
@@ -27,13 +27,27 @@ router.post('/', validate, (req, res, next) => {
 });
 
 // New session
-router.post('/login', (req, res, next) => {
+router.post('/login', validate, (req, res, next) => {
+  knex('users').where('username', req.body.username).first().then((user) => {
+    const storedPassword = user.hashed_password;
+    const userId = user.id;
 
+    bcrypt.compare(req.body.password, storedPassword).then((matched) => {
+      if (matched) {
+        req.session.id = userId;
+        res.end();
+      }
+    }).catch((err) => {
+      err.status = 401;
+      next(err);
+    });
+  });
 });
 
 // End session
 router.delete('/logout', (req, res) => {
-
+  req.session = null;
+  res.end();
 });
 
 function validate(req, res, next) {
