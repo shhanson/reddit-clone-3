@@ -13,6 +13,11 @@
         component: 'posts',
       })
       .state({
+        name: 'register',
+        url: '/register',
+        component: 'register',
+      })
+      .state({
         name: 'editPost',
         url: '/posts/:postId/edit',
         component: 'postform',

@@ -22,7 +22,7 @@
       };
 
       self.register = function register(username, password) {
-        $http.post('/users/register', {
+        return $http.post('/users/register', {
           username,
           password,
         }).then(() => {

@@ -3,7 +3,7 @@
     <label for='username'>Username:</label><input type='text' ng-model='$ctrl.username'>
     <label for='password'>Password:</label><input type='password' ng-model='$ctrl.password'>
     <button class='btn btn-primary' ng-click='$ctrl.login()'>Login</button>
-    <a href="">Register</a>
+    <a ui-sref='register'>Register</a>
   </div>
 
   <div ng-if='$ctrl.loggedIn'>
