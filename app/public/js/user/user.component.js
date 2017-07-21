@@ -20,6 +20,7 @@
         vm.session.username = vm.username;
         vm.username = '';
         vm.password = '';
+        vm.loggedIn = true;
       });
     };
 
@@ -27,6 +28,7 @@
       UserService.logout();
       vm.session.id = null;
       vm.session.username = null;
+      vm.loggedIn = false;
     };
 
     vm.register = function register(username, password) {

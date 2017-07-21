@@ -5,9 +5,9 @@
       templateUrl: '/js/postform/postform.template.html',
     });
 
-  PostformController.$inject = ['PostsService', '$stateParams', '$state'];
+  PostformController.$inject = ['PostsService', 'UserService', '$stateParams', '$state'];
 
-  function PostformController(PostsService, $stateParams, $state) {
+  function PostformController(PostsService, UserService, $stateParams, $state) {
     const vm = this;
     vm.tempPost = {};
 
@@ -21,6 +21,10 @@
           vm.tempPost = response.data;
         });
       }
+    };
+
+    vm.loggedIn = function loggedIn() {
+      return !!(UserService.session.id);
     };
 
 
