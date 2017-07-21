@@ -12,7 +12,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 // New user registration
-router.post('/', validate, (req, res, next) => {
+router.post('/register', validate, (req, res, next) => {
   bcrypt.hash(req.body.password, saltRounds).then((digest) => {
     knex('users').insert({
       username: req.body.username,
@@ -35,7 +35,7 @@ router.post('/login', validate, (req, res, next) => {
     bcrypt.compare(req.body.password, storedPassword).then((matched) => {
       if (matched) {
         req.session.id = userId;
-        res.end();
+        res.json(userId);
       }
     }).catch((err) => {
       err.status = 401;

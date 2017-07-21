@@ -1,0 +1,12 @@
+<form class='navbar-form navbar-right'>
+  <div class='form-group' ng-if='!$ctrl.session.id'>
+    <label for='username'>Username:</label><input type='text' ng-model='$ctrl.username'>
+    <label for='password'>Password:</label><input type='password' ng-model='$ctrl.password'>
+    <button class='btn btn-primary' ng-click='$ctrl.login()'>Login</button>
+    <a href="">Register</a>
+  </div>
+
+  <div ng-if='$ctrl.session.id'>
+    Welcome back, {{ $ctrl.session.username }}. <button class='btn btn-primary' ng-click='$ctrl.logout()'>Logout</button>
+  </div>
+</form>
