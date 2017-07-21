@@ -7,10 +7,10 @@
     <hr>
     <section ng-repeat="comment in $ctrl.comments | orderBy: id">
 
-      <p>{{ comment.content }} <span>(<a href='' ng-click='$ctrl.deleteComment(comment.id)' )>delete</a>)</p>
+      <p>{{ comment.content }} <a class='hide' href='' ng-click='$ctrl.deleteComment(comment.id)'>delete</a></p>
 
     </section>
-    <form name='newCommentForm' ng-submit='$ctrl.addComment();newCommentForm.$setUntouched()' class="form-inline">
+    <form ng-if='$ctrl.loggedIn()' name='newCommentForm' ng-submit='$ctrl.addComment();newCommentForm.$setUntouched()' class="form-inline">
       <div class="form-group" ng-class="{'has-error': newCommentForm.body.$touched && newCommentForm.body.$invalid}">
         <input class="form-control" type='text' name='body' ng-model='$ctrl.comment.content' required>
       </div>

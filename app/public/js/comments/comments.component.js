@@ -7,8 +7,8 @@
       controller: CommentsController,
       templateUrl: '/js/comments/comments.template.html',
     });
-  CommentsController.$inject = ['CommentsService', '$timeout', '$scope'];
-  function CommentsController(CommentsService, $timeout, $scope) {
+  CommentsController.$inject = ['CommentsService', 'UserService'];
+  function CommentsController(CommentsService, UserService) {
     const vm = this;
     vm.comment = {};
     vm.comments = [];
@@ -18,6 +18,10 @@
         vm.comments = CommentsService.comments;
       });
       // vm.doneProcessing = true;
+    };
+
+    vm.loggedIn = function loggedIn() {
+      return !!(UserService.session.id);
     };
 
 

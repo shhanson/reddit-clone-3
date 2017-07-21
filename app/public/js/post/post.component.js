@@ -8,16 +8,22 @@
       },
     });
 
-  PostController.$inject = ['PostsService'];
-  function PostController(PostsService) {
+  PostController.$inject = ['PostsService', 'UserService'];
+  function PostController(PostsService, UserService) {
     const vm = this;
 
+    vm.loggedIn = function loggedIn() {
+      return !!(UserService.session.id);
+    };
+
     vm.upvote = function upvote() {
-      PostsService.upvote(vm.post.id);
+      if (vm.loggedIn()) {
+        PostsService.upvote(vm.post.id);
+      }
     };
 
     vm.downvote = function downvote() {
-      if (vm.post.vote_count > 0) {
+      if (vm.loggedIn() && vm.post.vote_count > 0) {
         PostsService.downvote(vm.post.id);
       }
     };
