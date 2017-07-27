@@ -21,7 +21,6 @@ app.use(cookieSession({
 
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/posts', require('./routes/comments'));
-app.use('/users', require('./routes/users'));
 
 app.use('*', (req, res, next) => {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') });

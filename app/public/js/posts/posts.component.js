@@ -5,8 +5,8 @@
       templateUrl: '/js/posts/posts.template.html',
     });
 
-  PostsController.$inject = ['PostsService', 'UserService'];
-  function PostsController(PostsService, UserService) {
+  PostsController.$inject = ['PostsService'];
+  function PostsController(PostsService) {
     const vm = this;
 
     vm.posts = [];
@@ -17,8 +17,8 @@
       vm.sortSelected = '-vote_count';
     };
 
-    vm.loggedIn = function loggedIn() {
-      return !!(UserService.session.id);
-    };
+    // vm.loggedIn = function loggedIn() {
+    //   return !!(UserService.session.id);
+    // };
   }
 }());
