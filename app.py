@@ -53,6 +53,11 @@ def add_comments():
     jsonStr = json.dumps(added_comment.toJSON())
     return jsonStr
 
+@app.route('/comments', methods=['GET'])
+def get_comments():
+    comments = models.Comments.query.all()
+    jsonStr = json.dumps([c.toJSON() for c in comments])
+    return jsonStr
 
 @app.route('/<name>')
 def hello_name(name):
