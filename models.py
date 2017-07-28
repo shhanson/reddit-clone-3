@@ -1,39 +1,43 @@
 from flask_sqlalchemy import SQLAlchemy
-import datetime
+from datetime import datetime
 
 db = SQLAlchemy()
 
-class BaseModel(db.Model):
-    __abstract__ = True
-
-    def __init__(self, *args):
-        super().__init__(*args)
-
-    def __repr__(self):
-        return '%s(%s)' % (self.__class__.__name__, {
-            column: value
-            for column, value in self._to_dict().items()
-        })
-
-    def json(self):
-            return {
-                column: value if not isinstance(value, datetime.date) else value.strftime('%Y-%m-%d')
-                for column, value in self._to_dict().items()
-            }
-
-
-
-class Posts(BaseModel, db.Model):
+class Posts(db.Model):
     __tablename__ = 'posts'
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), nullable=False)
     author = db.Column(db.String(16), nullable=False)
     body = db.Column(db.String(600), nullable=False)
     image_url = db.Column(db.String(100), nullable=False)
-    vote_count = db.Column(db.Integer, default=0)
+    vote_count = db.Column(db.Integer, default=0, nullable=False)
+    created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
+    #
+    # def __init__(self, title, author, body, image_url):
+    #     self.title = title
+    #     self.author = author
+    #     self.body = body
+    #     self.image_url = image_url
+    #     self.vote_count = 0
+    #     self.created_at = datetime.now()
 
-class Comments(BaseModel, db.Model):
+    def __repr__(self):
+        return self.title
+
+
+class Comments(db.Model):
     __tablename__ = 'comments'
+
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(140), nullable=False)
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
+
+    # def __init__(self, content, post_id):
+    #     self.post_id = post_id
+    #     self.content = content
+    #     self.created_at = datetime.now()
+
+    def __repr__(self):
+        return self.content
