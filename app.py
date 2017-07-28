@@ -72,6 +72,24 @@ def edit_comment(comment_id):
     jsonStr = json.dumps(updated_comment.toJSON())
     return jsonStr
 
+
+@app.route('/posts/<post_id>/votes', methods=['POST'])
+def upvote(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    post.vote_count+=1
+    db.session.commit()
+    return jsonify(post.vote_count)
+
+@app.route('/posts/<post_id>/votes', methods=['DELETE'])
+def downvote(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    post.vote_count-=1
+    db.session.commit()
+    return jsonify(post.vote_count)
+
+
+
+
 @app.route('/comments/<comment_id>', methods=['DELETE'])
 def delete_comment(comment_id):
     comment = models.Comments.query.filter_by(id=comment_id).first()
@@ -81,8 +99,8 @@ def delete_comment(comment_id):
     resp = jsonify(message)
     resp.status_code = 200
     return resp
-
-
+  
+  
 @app.route('/<post_id>/comments', methods=['POST'])
 def add_comments():
     content = request.json.get('content')
