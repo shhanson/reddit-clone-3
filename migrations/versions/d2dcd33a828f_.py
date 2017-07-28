@@ -1,13 +1,13 @@
 """empty message
 
-Revision ID: d8508f2c52ac
+Revision ID: d2dcd33a828f
 Revises: None
-Create Date: 2017-07-28 09:15:05.854116
+Create Date: 2017-07-28 09:33:31.435821
 
 """
 
 # revision identifiers, used by Alembic.
-revision = 'd8508f2c52ac'
+revision = 'd2dcd33a828f'
 down_revision = None
 
 from alembic import op

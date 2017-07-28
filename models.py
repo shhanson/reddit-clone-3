@@ -15,6 +15,14 @@ class BaseModel(db.Model):
             for column, value in self._to_dict().items()
         })
 
+    def json(self):
+            return {
+                column: value if not isinstance(value, datetime.date) else value.strftime('%Y-%m-%d')
+                for column, value in self._to_dict().items()
+            }
+
+
+
 class Posts(BaseModel, db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
