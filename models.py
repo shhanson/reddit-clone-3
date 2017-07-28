@@ -42,10 +42,10 @@ class Comments(db.Model):
         self.post_id = post_id
         self.content = content
         self.created_at = created_at
-    
+
 
     def toJSON(self):
-        return {"id": self.id, "content": self.content, "pos_id": self.post_id, "created_at": self.created_at}
+        return {"id": self.id, "content": self.content, "post_id": self.post_id, "created_at": self.created_at}
 
     def __repr__(self):
         return self.content

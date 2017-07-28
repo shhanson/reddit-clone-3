@@ -38,6 +38,18 @@ def add_post():
     jsonStr = json.dumps(added_post.toJSON())
     return jsonStr
 
+@app.route('/posts/<post_id>', methods=['PATCH'])
+def edit_post(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    post.title = request.json.get('title') or post.title
+    post.author = request.json.get('author') or post.author
+    post.body = request.json.get('body') or post.body
+    post.image_url = request.json.get('image_url') or post.image_url
+    db.session.commit()
+
+    updated_post = models.Posts.query.filter_by(id=post_id).first()
+    jsonStr = json.dumps(updated_post.toJSON())
+    return jsonStr
 
 
 @app.route('/comments', methods=['POST'])
