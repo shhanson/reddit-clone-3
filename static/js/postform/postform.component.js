@@ -2,7 +2,7 @@
   angular.module('reddit-clone')
     .component('postform', {
       controller: PostformController,
-      templateUrl: '/js/postform/postform.template.html',
+      templateUrl: './static/js/postform/postform.template.html',
     });
 
   PostformController.$inject = ['PostsService', '$stateParams', '$state'];

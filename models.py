@@ -12,7 +12,7 @@ class Posts(db.Model):
     body = db.Column(db.String(600), nullable=False)
     image_url = db.Column(db.String(100), nullable=False)
     vote_count = db.Column(db.Integer, default=0, nullable=False)
-    created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     #
     def __init__(self, title, author, body, image_url, vote_count, created_at):
         self.title = title
