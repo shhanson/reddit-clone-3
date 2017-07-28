@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, json, request
+from flask import Flask, jsonify, json, request, Response
 from models import db
 from datetime import datetime
 import models
@@ -50,6 +50,16 @@ def edit_post(post_id):
     updated_post = models.Posts.query.filter_by(id=post_id).first()
     jsonStr = json.dumps(updated_post.toJSON())
     return jsonStr
+
+@app.route('/posts/<post_id>', methods=['DELETE'])
+def delete_post(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    db.session.delete(post)
+    db.session.commit()
+    message = { 'message': 'Post deleted.'}
+    resp = jsonify(message)
+    resp.status_code = 200
+    return resp
 
 
 @app.route('/comments', methods=['POST'])
