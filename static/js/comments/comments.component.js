@@ -5,7 +5,7 @@
         postId: '<',
       },
       controller: CommentsController,
-      templateUrl: '/js/comments/comments.template.html',
+      templateUrl: './static/js/comments/comments.template.html',
     });
   CommentsController.$inject = ['CommentsService'];
   function CommentsController(CommentsService) {

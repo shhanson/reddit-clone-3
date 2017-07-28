@@ -2,7 +2,8 @@
   angular.module('reddit-clone')
     .component('posts', {
       controller: PostsController,
-      templateUrl: '/js/posts/posts.template.html',
+      // templateUrl: './js/posts/posts.template.html',
+      templateUrl: './static/js/posts/posts.template.html',
     });
 
   PostsController.$inject = ['PostsService'];

@@ -2,7 +2,7 @@
   angular.module('reddit-clone')
     .component('post', {
       controller: PostController,
-      templateUrl: '/js/post/post.template.html',
+      templateUrl: './static/js/post/post.template.html',
       bindings: {
         post: '<',
       },
