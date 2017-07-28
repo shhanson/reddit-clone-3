@@ -23,7 +23,10 @@ class Posts(db.Model):
     #     self.created_at = datetime.now()
 
     def __repr__(self):
-        return self.title
+        return "title: %s, author: %s" % self.title, self.author
+
+    def toJSON(self):
+        return {"id": self.id, "title": self.title, "author": self.author, "body": self.body, "image_url": self.image_url, "vote_count": self.vote_count, "created_at": self.created_at}
 
 
 class Comments(db.Model):
@@ -38,6 +41,8 @@ class Comments(db.Model):
     #     self.post_id = post_id
     #     self.content = content
     #     self.created_at = datetime.now()
+    def toJSON(self):
+        return {"id": self.id, "content": self.content, "pos_id": self.post_id, "created_at": self.created_at}
 
     def __repr__(self):
         return self.content

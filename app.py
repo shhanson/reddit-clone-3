@@ -1,5 +1,7 @@
 from flask import Flask
+from flask import jsonify, json
 from models import db
+import models
 
 app = Flask(__name__)
 
@@ -13,8 +15,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(host)s/%(db)s' % POSTGRE
 db.init_app(app)
 
 @app.route('/')
-def hello():
-    return "Hello World!"
+def get_posts():
+    posts = models.Posts.query.all()
+    jsonStr = json.dumps([p.toJSON() for p in posts])
+    return jsonStr
+
 
 @app.route('/<name>')
 def hello_name(name):
