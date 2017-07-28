@@ -15,13 +15,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(host)s/%(db)s' % POSTGRE
 db.init_app(app)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/posts', methods=['GET'])
 def get_posts():
     posts = models.Posts.query.all()
     jsonStr = json.dumps([p.toJSON() for p in posts])
     return jsonStr
 
-@app.route('/', methods=['POST'])
+@app.route('/posts', methods=['POST'])
 def add_post():
     title = request.json.get('title')
     author = request.json.get('author')
@@ -36,6 +36,19 @@ def add_post():
     new_id = new_post.id
     added_post = models.Posts.query.filter_by(id=new_id).first()
     jsonStr = json.dumps(added_post.toJSON())
+    return jsonStr
+
+@app.route('/posts/<post_id>', methods=['PATCH'])
+def edit_post(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    post.title = request.json.get('title') or post.title
+    post.author = request.json.get('author') or post.author
+    post.body = request.json.get('body') or post.body
+    post.image_url = request.json.get('image_url') or post.image_url
+    db.session.commit()
+
+    updated_post = models.Posts.query.filter_by(id=post_id).first()
+    jsonStr = json.dumps(updated_post.toJSON())
     return jsonStr
 
 
@@ -58,6 +71,14 @@ def get_comments():
     comments = models.Comments.query.all()
     jsonStr = json.dumps([c.toJSON() for c in comments])
     return jsonStr
+
+
+@app.route('/posts/<post_id>', methods=['GET'])
+def get_post(post_id):
+    post = models.Posts.query.filter_by(id=post_id).first()
+    jsonStr = json.dumps(post.toJSON())
+    return jsonStr
+
 
 @app.route('/<name>')
 def hello_name(name):

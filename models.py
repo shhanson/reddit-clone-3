@@ -37,14 +37,15 @@ class Comments(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
     created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
 
+
     def __init__(self, content, post_id, created_at):
         self.post_id = post_id
         self.content = content
         self.created_at = created_at
 
-    
+
     def toJSON(self):
-        return {"id": self.id, "content": self.content, "pos_id": self.post_id, "created_at": self.created_at}
+        return {"id": self.id, "content": self.content, "post_id": self.post_id, "created_at": self.created_at}
 
     def __repr__(self):
         return self.content
