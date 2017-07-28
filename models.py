@@ -14,13 +14,13 @@ class Posts(db.Model):
     vote_count = db.Column(db.Integer, default=0, nullable=False)
     created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
     #
-    # def __init__(self, title, author, body, image_url):
-    #     self.title = title
-    #     self.author = author
-    #     self.body = body
-    #     self.image_url = image_url
-    #     self.vote_count = 0
-    #     self.created_at = datetime.now()
+    def __init__(self, title, author, body, image_url, vote_count, created_at):
+        self.title = title
+        self.author = author
+        self.body = body
+        self.image_url = image_url
+        self.vote_count = vote_count
+        self.created_at = created_at
 
     def __repr__(self):
         return "title: %s, author: %s" % self.title, self.author
