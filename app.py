@@ -50,7 +50,6 @@ def edit_post(post_id):
     updated_post = models.Posts.query.filter_by(id=post_id).first()
     jsonStr = json.dumps(updated_post.toJSON())
     return jsonStr
-
 @app.route('/posts/<post_id>', methods=['DELETE'])
 def delete_post(post_id):
     post = models.Posts.query.filter_by(id=post_id).first()
@@ -60,9 +59,20 @@ def delete_post(post_id):
     resp = jsonify(message)
     resp.status_code = 200
     return resp
+  
+
+@app.route('/<post_id>/comments/<comment_id>', methods=['PATCH'])
+def edit_comment(comment_id):
+    post = models.Comments.query.filter_by(id=comment_id).first()
+    post.content = request.json.get('content') or post.content
+    db.session.commit()
+
+    updated_comment = models.Comments.query.filter_by(id=comment_id).first()
+    jsonStr = json.dumps(updated_comment.toJSON())
+    return jsonStr
 
 
-@app.route('/comments', methods=['POST'])
+@app.route('/<post_id>/comments', methods=['POST'])
 def add_comments():
     content = request.json.get('content')
     post_id = request.json.get('post_id')
@@ -76,6 +86,11 @@ def add_comments():
     jsonStr = json.dumps(added_comment.toJSON())
     return jsonStr
 
+# @app.route('/comments', methods=['GET'])
+# def get_comments():
+#     comments = models.Comments.query.all()
+#     jsonStr = json.dumps([c.toJSON() for c in comments])
+#     return jsonStr
 
 
 @app.route('/posts/<post_id>', methods=['GET'])
