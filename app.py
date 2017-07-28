@@ -38,11 +38,30 @@ def add_post():
     jsonStr = json.dumps(added_post.toJSON())
     return jsonStr
 
+
+
+@app.route('/comments', methods=['POST'])
+def add_comments():
+    content = request.json.get('content')
+    post_id = request.json.get('post_id')
+    created_at = datetime.now()
+    new_comment = models.Comments(content, post_id, created_at)
+    db.session.add(new_comment)
+    db.session.commit()
+
+    new_id = new_comment.id
+    added_comment = models.Comments.query.filter_by(id=new_id).first()
+    jsonStr = json.dumps(added_comment.toJSON())
+    return jsonStr
+
+
+
 @app.route('/posts/<post_id>', methods=['GET'])
 def get_post(post_id):
     post = models.Posts.query.filter_by(id=post_id).first()
     jsonStr = json.dumps(post.toJSON())
     return jsonStr
+
 
 @app.route('/<name>')
 def hello_name(name):
