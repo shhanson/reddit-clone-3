@@ -50,6 +50,7 @@ def edit_post(post_id):
     updated_post = models.Posts.query.filter_by(id=post_id).first()
     jsonStr = json.dumps(updated_post.toJSON())
     return jsonStr
+
 @app.route('/posts/<post_id>', methods=['DELETE'])
 def delete_post(post_id):
     post = models.Posts.query.filter_by(id=post_id).first()
@@ -59,7 +60,7 @@ def delete_post(post_id):
     resp = jsonify(message)
     resp.status_code = 200
     return resp
-  
+
 
 @app.route('/<post_id>/comments/<comment_id>', methods=['PATCH'])
 def edit_comment(comment_id):
@@ -70,6 +71,16 @@ def edit_comment(comment_id):
     updated_comment = models.Comments.query.filter_by(id=comment_id).first()
     jsonStr = json.dumps(updated_comment.toJSON())
     return jsonStr
+
+@app.route('/comments/<comment_id>', methods=['DELETE'])
+def delete_comment(comment_id):
+    comment = models.Comments.query.filter_by(id=comment_id).first()
+    db.session.delete(comment)
+    db.session.commit()
+    message = { 'message': 'Comment deleted.'}
+    resp = jsonify(message)
+    resp.status_code = 200
+    return resp
 
 
 @app.route('/<post_id>/comments', methods=['POST'])
