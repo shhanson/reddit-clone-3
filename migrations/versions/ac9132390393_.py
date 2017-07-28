@@ -1,13 +1,13 @@
 """empty message
 
-Revision ID: d2dcd33a828f
+Revision ID: ac9132390393
 Revises: None
-Create Date: 2017-07-28 09:33:31.435821
+Create Date: 2017-07-28 10:59:41.381778
 
 """
 
 # revision identifiers, used by Alembic.
-revision = 'd2dcd33a828f'
+revision = 'ac9132390393'
 down_revision = None
 
 from alembic import op
@@ -22,13 +22,15 @@ def upgrade():
     sa.Column('author', sa.String(length=16), nullable=False),
     sa.Column('body', sa.String(length=600), nullable=False),
     sa.Column('image_url', sa.String(length=100), nullable=False),
-    sa.Column('vote_count', sa.Integer(), nullable=True),
+    sa.Column('vote_count', sa.Integer(), nullable=False),
+    sa.Column('created_at', sa.Date(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('comments',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('content', sa.String(length=140), nullable=False),
-    sa.Column('post_id', sa.Integer(), nullable=True),
+    sa.Column('post_id', sa.Integer(), nullable=False),
+    sa.Column('created_at', sa.Date(), nullable=False),
     sa.ForeignKeyConstraint(['post_id'], ['posts.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
