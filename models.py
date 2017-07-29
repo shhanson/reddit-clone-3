@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 from datetime import datetime
 
 db = SQLAlchemy()
@@ -12,7 +13,7 @@ class Posts(db.Model):
     body = db.Column(db.String(600), nullable=False)
     image_url = db.Column(db.String(100), nullable=False)
     vote_count = db.Column(db.Integer, default=0, nullable=False)
-    created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
     #
     def __init__(self, title, author, body, image_url, vote_count, created_at):
         self.title = title
@@ -35,7 +36,7 @@ class Comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(140), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
-    created_at = db.Column(db.Date, default=datetime.now(), nullable=False)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
 
 
     def __init__(self, content, post_id, created_at):

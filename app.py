@@ -3,7 +3,7 @@ from models import db
 from datetime import datetime
 import models
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 
 POSTGRES = {
     'db': 'reddit-clone-3',
@@ -65,6 +65,11 @@ def edit_post(post_id):
 # DELETE Post <post_id>
 @app.route('/api/posts/<post_id>', methods=['DELETE'])
 def delete_post(post_id):
+    # Must delete all comments associated with post first due to foreign key constraint
+    post_comments = models.Comments.query.filter_by(post_id=post_id)
+    for c in post_comments:
+        db.session.delete(c)
+    #Now the post itself may be deleted
     post = models.Posts.query.filter_by(id=post_id).first()
     db.session.delete(post)
     db.session.commit()
@@ -134,12 +139,10 @@ def get_comments(post_id):
     jsonStr = json.dumps([c.toJSON() for c in comments])
     return jsonStr
 
-
 @app.route('/')
 def root():
     return app.send_static_file('index.html')
     # return render_template('index.html')
-
 
 if __name__ == '__main__':
     app.config['DEBUG'] = True

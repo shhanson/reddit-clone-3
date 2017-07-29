@@ -2,9 +2,9 @@
   angular.module('reddit-clone', ['ui.router', 'angularMoment'])
     .config(config);
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$routeProvider'];
+  config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-  function config($stateProvider, $urlRouterProvider, $locationProvider, $routeProvider) {
+  function config($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     // $routeProvider
     //     .when('/posts', {
