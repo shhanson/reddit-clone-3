@@ -84,7 +84,8 @@ def upvote(post_id):
     post = models.Posts.query.filter_by(id=post_id).first()
     post.vote_count+=1
     db.session.commit()
-    return jsonify(post.vote_count)
+    votes = { 'vote_count': post.vote_count }
+    return jsonify(votes)
 
 # Downvote
 @app.route('/api/posts/<post_id>/votes', methods=['DELETE'])
@@ -92,7 +93,8 @@ def downvote(post_id):
     post = models.Posts.query.filter_by(id=post_id).first()
     post.vote_count-=1
     db.session.commit()
-    return jsonify(post.vote_count)
+    votes = { 'vote_count': post.vote_count }
+    return jsonify(votes)
 
 #### COMMENTS ROUTES ####
 
