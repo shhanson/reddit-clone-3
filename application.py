@@ -8,7 +8,7 @@ app = Flask(__name__)
 POSTGRES = {
     'db': 'ers-psql.chwc2d4rnuv3.us-east-2.rds.amazonaws.com:5432',
     'host': 'localhost',
-    'user': 'erspsql',
+    'user': 'postgres',
     'pw': 'ethanrobertsarah',
     'port': '5432',
 }
